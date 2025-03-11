@@ -1,6 +1,4 @@
-﻿
-
-namespace WordSearch.Core
+﻿namespace WordSearch.Core
 {
     public class Validate
     {
