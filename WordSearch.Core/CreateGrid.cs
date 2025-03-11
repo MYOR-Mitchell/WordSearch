@@ -31,7 +31,7 @@ namespace WordSearch.Core
             return Rows;
         }
 
-        void Test()
+        public void Test()
         {
             var Rows = CreateRows();
             foreach(var row in Rows)
