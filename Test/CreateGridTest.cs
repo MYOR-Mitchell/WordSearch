@@ -4,15 +4,15 @@ namespace Test
 {
     public class CreateGridTest
     {
-        private readonly CreateGrid createGrid = new CreateGrid();
+        private readonly CreateGrid _createGrid = new CreateGrid();
 
         [Theory]
-        [InlineData(10)]
         [InlineData(12)]
         [InlineData(14)]
+        [InlineData(16)]
         public void ShouldReturnRequestedGridSize(int x)
         {
-            var Rows = createGrid.CreateRows(x);
+            var Rows = _createGrid.CreateRows(x);
 
             Assert.Equal(x, Rows.Count);
 

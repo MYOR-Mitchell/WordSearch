@@ -4,7 +4,7 @@ namespace Test
 {
     public class ValidateWordTest
     {
-        private readonly ValidateWord validateWord = new ValidateWord();
+        private readonly ValidateWord _validateWord = new ValidateWord();
 
         [Theory]
         [InlineData("")]
@@ -13,7 +13,7 @@ namespace Test
         [InlineData("superduck")] 
         public void ShouldThrowExceptionForInvalidWords(string word)
         {
-            Assert.Throws<ArgumentException>(() => validateWord.ValidWord(word));
+            Assert.Throws<ArgumentException>(() => _validateWord.ValidWord(word));
         }
     }
 }

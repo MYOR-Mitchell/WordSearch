@@ -10,15 +10,15 @@
             random = new Random();
         }
 
-        public List<char[]> CreateRows(int difficulty)
+        public List<char[]> CreateRows(int gridSize)
         {
             List<char[]> Rows = new List<char[]>();
 
-            for(int i = 0; i < difficulty; i++)
+            for(int i = 0; i < gridSize; i++)
             {
-                char[] row = new char[difficulty];
+                char[] row = new char[gridSize];
 
-                for(int j = 0; j < difficulty; j++)
+                for(int j = 0; j < gridSize; j++)
                 {
                     row[j] = GenerateLetter();
                 }

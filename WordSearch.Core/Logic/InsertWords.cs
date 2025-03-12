@@ -1,7 +1,8 @@
 ﻿namespace WordSearch.Core.Logic
 {
-    class InsertWords
+    public class InsertWords
     {
 
     }
 }
+
