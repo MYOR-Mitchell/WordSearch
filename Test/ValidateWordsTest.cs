@@ -4,12 +4,12 @@ namespace Test
 {
     public class ValidateWordsTest
     {
-        private readonly ValidateWords _validate;
-        private readonly WordListState _wordListState;
+        private readonly ValidateWord _validate;
+        private readonly WordList _wordList;
         public ValidateWordsTest()
         {
-            _wordListState = new WordListState();
-            _validate = new ValidateWords(_wordListState);
+            _wordList = new WordList();
+            _validate = new ValidateWord(_wordList);
         }
 
         [Theory]

@@ -2,7 +2,7 @@
 
 namespace WordSearch.Core
 {
-    public class WordListState
+    public class WordList
     {
         private List<List<char>> _words = new List<List<char>>();
 

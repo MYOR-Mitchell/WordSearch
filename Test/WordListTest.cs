@@ -2,9 +2,9 @@
 
 namespace Test
 {
-    public class WordListStateTest
+    public class WordListTest
     {
-        private readonly WordListState _wordListState = new WordListState();
+        private readonly WordList _wordList = new WordList();
 
         [Theory]
         [InlineData("duck")]
@@ -13,9 +13,9 @@ namespace Test
         {
             var wordCharArray = word.ToUpper().Trim().ToCharArray();
 
-            _wordListState.AddWord(wordCharArray);
+            _wordList.AddWord(wordCharArray);
 
-            Assert.Contains(wordCharArray.ToList(), _wordListState.Words);
+            Assert.Contains(wordCharArray.ToList(), _wordList.Words);
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿namespace WordSearch.Core
 {
-    public class ValidateWords
+    public class ValidateWord
     {
-        private readonly WordListState _wordListState;
-        public ValidateWords(WordListState wordListState)
+        private readonly WordList _wordList;
+        public ValidateWord(WordList wordList)
         {
-            _wordListState = wordListState;
+            _wordList = wordList;
         }
 
         public void ValidWord(string word)
@@ -14,7 +14,7 @@
 
             if(string.IsNullOrEmpty(word))
             {
-                throw new ArgumentException("Word cannot be null or empty.");
+                throw new ArgumentException("Word cannot be empty.");
             }
             else if(word.Length < 3 || word.Length > 6)
             {
@@ -26,7 +26,7 @@
             }
             else
             {
-                _wordListState.AddWord(word.ToCharArray());
+                _wordList.AddWord(word.ToCharArray());
             }
         }
     }
