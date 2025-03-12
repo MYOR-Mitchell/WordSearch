@@ -1,14 +1,8 @@
-﻿namespace WordSearch.Core
+﻿namespace WordSearch.Core.Utility
 {
     public class ValidateWord
     {
-        private readonly WordList _wordList;
-        public ValidateWord(WordList wordList)
-        {
-            _wordList = wordList;
-        }
-
-        public void ValidWord(string word)
+         public void ValidWord(string word)
         {
             word = word.ToUpper().Trim();
 
@@ -23,10 +17,6 @@
             else if(!word.All(char.IsLetter))
             {
                 throw new ArgumentException("Word can only contain letters (A-Z).");
-            }
-            else
-            {
-                _wordList.AddWord(word.ToCharArray());
             }
         }
     }
