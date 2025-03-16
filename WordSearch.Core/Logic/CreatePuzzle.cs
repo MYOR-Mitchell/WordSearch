@@ -26,6 +26,7 @@ namespace WordSearch.Core.Logic
 
 /*
  * To-do:
+ * - Make sure the words get ToUpper() before final placement!
  * - Add the dto to the controller.
  * - Break down SetLocations class.  Whoops.
  * - Add logic to reverse a 3rd or something of the words--Simulate excluded directions left and down
