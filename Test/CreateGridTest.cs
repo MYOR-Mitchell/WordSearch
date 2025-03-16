@@ -12,7 +12,7 @@ namespace Test
         [InlineData(16)]
         public void ShouldReturnRequestedGridSize(int x)
         {
-            var Rows = _createGrid.CreateRows(x);
+            var Rows = _createGrid.Grid(x);
 
             Assert.Equal(x, Rows.Count);
 

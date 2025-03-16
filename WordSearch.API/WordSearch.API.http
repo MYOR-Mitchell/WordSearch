@@ -1,0 +1,6 @@
+@WordSearch.API_HostAddress = http://localhost:7149
+
+GET {{WordSearch.API_HostAddress}}/wordsearch/
+Accept: application/json
+
+###

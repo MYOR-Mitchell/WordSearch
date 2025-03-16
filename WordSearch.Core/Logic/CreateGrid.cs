@@ -10,7 +10,7 @@
             random = new Random();
         }
 
-        public List<char[]> CreateRows(int gridSize)
+        public List<char[]> Grid(int gridSize)
         {
             List<char[]> Rows = new List<char[]>();
 
