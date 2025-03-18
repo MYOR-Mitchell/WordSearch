@@ -8,36 +8,46 @@ namespace WordSearch.API.Controllers
     [ApiController]
     public class WordsController : ControllerBase
     {
-        private readonly ICreateCustomPuzzle _customPuzzle;
+        private readonly ICreatePuzzle _createPuzzle;
 
-        public WordsController(ICreateCustomPuzzle customPuzzle)
+        public WordsController(ICreatePuzzle createPuzzle)
         {
-            _customPuzzle = customPuzzle;
+            _createPuzzle = createPuzzle;
         }
 
         [HttpPost]
         public IActionResult GenerateWordSearch([FromBody] WordSearchModel wordSearch)
         {
-            if(wordSearch == null || wordSearch.Words == null || wordSearch.Words.Count <= 0 || wordSearch.Words.Count > wordSearch.GridSize)
+            if(wordSearch?.Words == null || !wordSearch.Words.Any() || wordSearch.GridSize < 3)
             {
-                return BadRequest(new { message = "Invalid list, please try again." });
-            }
-
-            if(wordSearch.GridSize < 5 || wordSearch.GridSize > 15)
-            {
-                return BadRequest(new { message = "Invalid gridsize, please try again." });
+                return BadRequest(new { message = "Invalid input. Please check your words and grid size." });
             }
 
             foreach(var word in wordSearch.Words)
             {
-                string tWord = word?.Trim();
-                if(string.IsNullOrEmpty(tWord) || tWord.Length < 3 || tWord.Length > wordSearch.GridSize)
+                if(word.Length > wordSearch.GridSize)
                 {
-                    return BadRequest(new { message = "Invalid list, please try again." });
+                    return BadRequest(new { message = "Words cannot be larger than the grid size." });
                 }
             }
 
-            var puzzle = _customPuzzle.Create(wordSearch);
+            int gridCells = wordSearch.GridSize * wordSearch.GridSize;
+            int wordCharacters = 0;
+
+            foreach(var word in wordSearch.Words)
+            {
+                wordCharacters += word.Length;
+            }
+
+            if(wordCharacters > gridCells / 2)
+                return BadRequest(new { message = "Total word character count exceeded." });
+
+            var (success, puzzle) = _createPuzzle.Create(wordSearch);
+
+            if(!success)
+            {
+                return BadRequest(new { message = "Unable to create puzzle, please try again." });
+            }
 
             return Ok(puzzle);
         }

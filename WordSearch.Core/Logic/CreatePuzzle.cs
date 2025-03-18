@@ -1,39 +1,50 @@
-﻿using WordSearch.Core.Logic.Interface;
+﻿using WordSearch.Core.Logic.Grid;
+using WordSearch.Core.Logic.Interface;
+using WordSearch.Core.Logic.Locations;
 using WordSearch.Core.Model;
 
 namespace WordSearch.Core.Logic
 {
-    public class CreatePuzzle : ICreateCustomPuzzle
+    public class CreatePuzzle : ICreatePuzzle
     {
+        private readonly CreateEmptyGrid _createEmptyGrid;
+        private readonly FillEmptyGrid _fillEmptyGrid;
         private readonly SetLocations _setLocations;
-        private readonly CreateGrid _createGrid;
-        public CreatePuzzle(SetLocations setLocations, CreateGrid createGrid)
+        public CreatePuzzle(CreateEmptyGrid createEmptyGrid, FillEmptyGrid fillEmptyGrid, SetLocations setLocations)
         {
+            _createEmptyGrid = createEmptyGrid;
+            _fillEmptyGrid = fillEmptyGrid;
             _setLocations = setLocations;
-            _createGrid = createGrid;
         }
 
-        public List<char[]> Create(WordSearchModel wordSearch)
+        public (bool, List<char[]>?) Create(WordSearchModel wordSearch)
         {
-            List<char[]> grid = _createGrid.Grid(wordSearch.GridSize);
-            List<List<(int, int)>> coordinates = _setLocations.Locations(wordSearch.Words);
+            for(int i = 0; i < wordSearch.Words.Count; i++)
+            {
+                wordSearch.Words[i] = wordSearch.Words[i].ToUpper().Trim();
+            }
 
-            return grid;
+            wordSearch.Words.Sort((word1, word2) => word2.Length.CompareTo(word1.Length));
+
+            List<char[]> Grid = _createEmptyGrid.CreateGrid(wordSearch.GridSize);
+
+            //int attempts = 0;
+
+            while(!_setLocations.Locations(wordSearch.Words, Grid))
+            {
+                Grid = _createEmptyGrid.CreateGrid(wordSearch.GridSize);
+
+                //attempts++;
+
+                //if(attempts > 3)
+                //{
+                //    return (false, null);
+                //}
+            }
+
+            _fillEmptyGrid.FillGrid(Grid);
+
+            return (true, Grid);
         }
     }
 }
-
-
-/*
- * To-do:
- * - Make sure the words get ToUpper() before final placement!
- * - Add the dto to the controller.
- * - Break down SetLocations class.  Whoops.
- * - Add logic to reverse a 3rd or something of the words--Simulate excluded directions left and down
- * - Implement update test after overhaul.
- *  
- * Less immediate to-do:
- * - Implement the db, and refactor accordingly.
- * - Predefined categories with list of related words
- * - Extend custom puzzle options back to full involvement... 
- */
