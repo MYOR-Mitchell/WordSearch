@@ -28,18 +28,9 @@ namespace WordSearch.Core.Logic
 
             List<char[]> Grid = _createEmptyGrid.CreateGrid(wordSearch.GridSize);
 
-            //int attempts = 0;
-
             while(!_setLocations.Locations(wordSearch.Words, Grid))
             {
                 Grid = _createEmptyGrid.CreateGrid(wordSearch.GridSize);
-
-                //attempts++;
-
-                //if(attempts > 3)
-                //{
-                //    return (false, null);
-                //}
             }
 
             _fillEmptyGrid.FillGrid(Grid);
