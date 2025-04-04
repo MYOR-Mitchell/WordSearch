@@ -1,0 +1,11 @@
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\bin\Debug\net8.0\WordSearch.Core.deps.json
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\bin\Debug\net8.0\WordSearch.Core.dll
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\bin\Debug\net8.0\WordSearch.Core.pdb
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.AssemblyInfoInputs.cache
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.AssemblyInfo.cs
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.csproj.CoreCompileInputs.cache
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.dll
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\refint\WordSearch.Core.dll
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\WordSearch.Core.pdb
+C:\Users\cakef\Desktop\projects\WordSearch\WordSearch.Core\obj\Debug\net8.0\ref\WordSearch.Core.dll

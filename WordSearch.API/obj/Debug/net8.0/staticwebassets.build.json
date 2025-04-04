@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "tRLbC5WHEXk4JUcPLRHWZ09PXxoNDVYvMOeJxZ5mrEg=",
+  "Source": "WordSearch.API",
+  "BasePath": "_content/WordSearch.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

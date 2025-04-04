@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "WordSearch.API.Controllers.WordsController",
+    "Method": "GenerateWordSearch",
+    "RelativePath": "api/wordsearch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "wordSearch",
+        "Type": "WordSearch.Core.Model.WordSearchModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
