@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --base-clr: #ffffffee;
+    --text-clr: #000000;
+    --accent-clr-main: #fff700;
+    --accent-clr-secondary: #ff3333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: rgba(128, 203, 247, 0.404);
+    color: var(--text-clr);
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 5rem;
+    padding: 2rem 5rem;
+}
+
+.grid-container {
+    background-color: #fff700d8;
+    border: outset 3px var(--text-clr);
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+}
+
+.grid-container h1 {
+    color: #201f1f;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.grid {
+    background-color: var(--base-clr);
+    border: solid 3px var(--text-clr);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 100%;
+    max-height: 600px;
+    padding: 1rem;
+    display: flex;
+}
+
+.letters {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.letters .letter {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    padding: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.words-container {
+    border: solid 3px var(--text-clr);
+    background-color: var(--base-clr);
+    border-radius: 15px;
+}
+
+.words-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.words-list .words {
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    list-style: none;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.grid-container,
+.controls {
+    flex: 1 1 auto;
+    min-width: 450px;
+    max-width: 800px;
+}
+
+
+.controls p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .3rem;
+    padding-left: .5rem;
+}
+
+.controls p span {
+    font-weight: bold;
+    color: var(--accent-clr-secondary);
+}
+
+.controls input[type="text"],
+.controls textarea,
+.controls input[type="number"] {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: rgba(71, 69, 69, 0.199);
+    border: outset 2px var(--text-clr);
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-clr);
+}
+
+.controls input[type="text"] {
+    padding: 1rem;
+}
+
+.controls textarea {
+    height: 15%;
+    resize: none;
+    padding: 1rem;
+}
+
+.controls input[type="number"] {
+    padding: 1rem;
+    width: 100%;
+}
+
+.controls input[type="text"]::placeholder,
+.controls textarea::placeholder,
+.controls input[type="number"]::placeholder {
+    color: rgba(0, 0, 0, 0.63);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.controls button {
+    all: unset;
+    background-color: var(--accent-clr-secondary);
+    border: outset 2px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 10px;
+    color: var(--text-clr);
+    font-size: 1.3rem;
+    font-weight: 500;
+    height: fit-content;
+    width: fit-content;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.controls button:hover {
+    background-color: var(--accent-clr-main);
+    color: var(--text-clr);
+}
