@@ -51,5 +51,11 @@ namespace WordSearch.API.Controllers
 
             return Ok(puzzle);
         }
+
+        [HttpGet("ping")]
+        public IActionResult Ping()
+        {
+            return Ok("pong");
+        }
     }
 }
