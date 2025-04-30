@@ -1,32 +1,28 @@
 # WordSearch Puzzle Generator 🧩🔠 <br>
 
-A backend service that lets you generate custom puzzle from your list of of words and gridsize.
-Built with ASP.NET Core.
+Application for generating word search puzzles  
+- *Built with ASP.NET Core, C#, HTML, CSS, JavaScript*
   
 ## ✨ Features
 
-- Generates a word search grid of any square size (e.g., 10x10, 15x15).
-- Words can be assign forward or backwards.
-- Randomly places words in all directions:
-  - Horizontal 
-  - Vertical 
-  - Diagonal <br>
+- Generated from user word list and grid size
+- User-defined puzzle header
+- Supports all directions and reverse words
+- Validation logic for word placement
+- Visual representation of completed puzzle
+- Formatted display for printing and saving <br>
 
 --- 
 
 <br>
 
-## 🧠 How It Works
-
-You provide:
-   - A list of words
-   - A grid size (e.g., 10x10)
-For each word:
-   - Random direction is chosen
-   - Starting point is assigned and adjusted to stay within boundaries
-   - Coordinates are calculated
-   - Word is placed if it fits and any overlapping areas are valid. 
-Remaining empty spaces are filled with random characters. <br>
+## 🧠 How It Works  <br>
+   - Random direction and starting point is assigned to the word 
+   - Adjustments are made to keep words within boundaries
+   - Each word will be broken down into letters
+   - Grid coordinates are calculated for each letter
+   - Letters are placed on the grid and validated to ensure proper overlaps
+   - Remaining grid spaces are populated with random letters. <br>
 
 ---
 
@@ -36,8 +32,6 @@ Remaining empty spaces are filled with random characters. <br>
 
 - Implement a database 
 - Premade themed puzzle  
-- Save and load your own  
 - Provide user with a cheat sheet  
-- A frontend with dynamic user options and the ability to print.  
 
 ---
