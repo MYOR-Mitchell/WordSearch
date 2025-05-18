@@ -80,7 +80,7 @@ function renderWordList(words) {
     wordsListContainer.innerHTML = "";
 
     let colSize = words.length;
-    colSize <= 15 ? colSize = 4 : colSize = 7;
+    colSize <= 16 ? colSize = 4 : colSize = 7;
 
     for (let i = 0; i < words.length; i += colSize) {
         const col = words.slice(i, i + colSize);
